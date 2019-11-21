@@ -1,5 +1,19 @@
-var num = [45,73,195,53]
 
-var compNum = [num[0]*num[1],num[1]*num[2],num[2]*num[3]]
+func loveCalculator(){
+    
+    let lovescore = Int.random(in: 0...100)
 
-    print(compNum);
+    if lovescore==100{
+        print("You love yourself as Kanye loves Kanye")
+    }else{
+        print("You are alone")
+    }
+    
+    
+    
+    
+}
+
+
+
+loveCalculator()
