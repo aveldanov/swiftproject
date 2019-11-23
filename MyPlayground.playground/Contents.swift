@@ -12,8 +12,7 @@ func loveCalculator(){
 
     }
     
-    
-    
+
     
     
 //    if lovescore > 80{
@@ -26,9 +25,7 @@ func loveCalculator(){
 //        print("You are alone")
 //    }
     
-    
-    
-    
+
 }
 
 
