@@ -1,14 +1,11 @@
-var seconds=60
-
-
-func countDown(){
-    
-       Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
-    
-    
-    
-    
+struct Town {
+    let name = "AntonLand"
+    var citizens = ["cit1", "cit2"]
+    var resources = ["Grain":100, "Ore":42, "Wool": 75]
 }
 
 
-countDown()
+
+var myTown = Town()
+
+print(myTown.citizens)
