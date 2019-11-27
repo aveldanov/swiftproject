@@ -1,7 +1,21 @@
 struct Town {
-    let name = "AntonLand"
-    var citizens = ["cit1", "cit2"]
-    var resources = ["Grain":100, "Ore":42, "Wool": 75]
+    let name:String
+    var citizens:[String]
+    var resources:[String:Int]
+    var flf:Bool
+    
+//    init(townName:String, people:[String], stat:[String:Int]) {
+//        name = townName
+//        citizens = people
+//        resources = stat
+//    }
+    init(name:String, citizens:[String], resources:[String:Int]) {
+        self.name = name
+        self.citizens = citizens
+        self.resources = resources
+    }
+    
+    
     
     
     func fortify(){
@@ -10,4 +24,11 @@ struct Town {
 }
 
 
-//
+
+var anotherTown = Town(name: "Island", citizens: ["Tom Hansk"], resources: ["Coco":1000])
+
+anotherTown.citizens.append("Wilson")
+
+print(anotherTown)
+
+var ghostTown  = Town(name: "GTOWN", citizens: [], resources: ["weed":1])
