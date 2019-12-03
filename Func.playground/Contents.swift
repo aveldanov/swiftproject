@@ -6,8 +6,6 @@ func greetings(){
 greetings()
 
 
-
-
 func greetings2(name:String){
     
     print("Hello \(name)")
