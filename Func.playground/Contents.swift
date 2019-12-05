@@ -12,7 +12,6 @@ func greetings2(name:String){
         
 }
 
-
 greetings2(name: "John")
 
 
