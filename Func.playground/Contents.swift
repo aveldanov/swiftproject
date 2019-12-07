@@ -5,7 +5,6 @@ func greetings(){
 
 greetings()
 
-
 func greetings2(name:String){
     
     print("Hello \(name)")
@@ -13,7 +12,6 @@ func greetings2(name:String){
 }
 
 greetings2(name: "John")
-
 
 func greetings3(name:String)->Bool{
     
