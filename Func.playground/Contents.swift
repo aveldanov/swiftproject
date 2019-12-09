@@ -21,7 +21,6 @@ func greetings3(name:String)->Bool{
         return false
     }
     
-    
 }
 
 greetings3(name: "John")
