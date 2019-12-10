@@ -11,6 +11,8 @@ func greetings2(name:String){
         
 }
 
+
+
 greetings2(name: "John")
 
 func greetings3(name:String)->Bool{
