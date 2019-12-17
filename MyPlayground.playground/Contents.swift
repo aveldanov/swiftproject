@@ -20,7 +20,6 @@ struct Town {
     }
 }
 
-
 var anotherTown = Town(name: "Island", citizens: ["Tom Hansk"], resources: ["Coco":1000])
 
 anotherTown.citizens.append("Wilson")
