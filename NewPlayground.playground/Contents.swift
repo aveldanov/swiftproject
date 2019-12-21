@@ -1,3 +1,10 @@
 
-// comment
-print("Hello \(2+3)")
+func greeting(){
+    
+    print("HELLO")
+    
+    
+}
+
+
+greeting()
