@@ -23,8 +23,6 @@ print(anotherTown)
 
 
 
-
-
 //struct Town {
 //    let name:String
 //    var citizens:[String]
