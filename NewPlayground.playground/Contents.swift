@@ -1,17 +1,12 @@
-
-
-
-
-
-
-
 struct Town {
     let name:String
     var citizens:[String]
     var resources:[String: Int]
     
-    init(townName:String, people:[String], stats:[String: Int]) {
-        <#statements#>
+    init(name:String, citizens:[String], resources:[String: Int]) {
+        self.name = name
+        self.citizens = citizens
+        self.resources = resources
     }
     
     
@@ -21,6 +16,36 @@ struct Town {
 }
 
 
+var anotherTown = Town(name: "Moscow", citizens: ["Name 1","Name 2"], resources: ["Water" : 234])
+anotherTown.citizens.append("Name 3")
+print(anotherTown)
+
+
+
+
+
+
+//struct Town {
+//    let name:String
+//    var citizens:[String]
+//    var resources:[String: Int]
+//
+//    init(townName:String, people:[String], stats:[String: Int]) {
+//        name = townName
+//        citizens = people
+//        resources = stats
+//    }
+//
+//
+//    func fortify(){
+//        print("Defenses increase")
+//    }
+//}
+//
+//
+//var anotherTown = Town(townName: "Moscow", people: ["Name 1","Name 2"], stats: ["Water" : 234])
+//anotherTown.citizens.append("Name 3")
+//print(anotherTown)
 
 
 
