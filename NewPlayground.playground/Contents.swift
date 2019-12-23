@@ -5,11 +5,19 @@ struct Town {
     let name = "Reutov"
     var citizens = ["Anton", "John"]
     var resources = ["Grain":100, "Ore":42, "Wool":300]
+    func fortify(){
+        print("Defenses increase")
+    }
 }
 
 
 
+var myTown = Town()
 
+print(myTown.citizens)
+print("Hello \(myTown.name) has \(myTown.resources["Grain"]!) of grain")
+
+myTown.citizens.append("Keanu Reeves")
 
 
 
