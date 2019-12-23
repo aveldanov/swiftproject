@@ -1,24 +1,60 @@
 
 
-func loveCalculator(){
+
+struct Town {
     
-    let loveScore = Int.random(in: 1...100)
-    
-    if loveScore >= 80{
-        print(">=80")
-    }else if loveScore >= 40{
-        
-        print(">=40")
-    }else{
-        
-        print("<40")
-    }
-    
-    
+    let name = "Reutov"
+    var citizens = ["Anton", "John"]
+    var resources = ["Grain":100, "Ore":42, "Wool":300]
     
 }
 
-loveCalculator()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//func loveCalculator(){
+//
+//    let loveScore = Int.random(in: 1...100)
+//
+//    if loveScore >= 80{
+//        print(">=80")
+//    }else if loveScore >= 40{
+//
+//        print(">=40")
+//    }else{
+//
+//        print("<40")
+//    }
+//
+//
+//
+//}
+//
+//loveCalculator()
 
 
 
