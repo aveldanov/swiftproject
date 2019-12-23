@@ -6,9 +6,15 @@
 
 
 struct Town {
-    let name = "Reutov"
-    var citizens = ["Anton", "John"]
-    var resources = ["Grain":100, "Ore":42, "Wool":300]
+    let name:String
+    var citizens:[String]
+    var resources:[String: Int]
+    
+    init(townName:String, people:[String], stats:[String: Int]) {
+        <#statements#>
+    }
+    
+    
     func fortify(){
         print("Defenses increase")
     }
