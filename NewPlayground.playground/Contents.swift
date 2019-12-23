@@ -2,11 +2,9 @@
 
 
 struct Town {
-    
     let name = "Reutov"
     var citizens = ["Anton", "John"]
     var resources = ["Grain":100, "Ore":42, "Wool":300]
-    
 }
 
 
