@@ -21,7 +21,6 @@ var anotherTown = Town(name: "Moscow", citizens: ["Name 1","Name 2"], resources:
 anotherTown.citizens.append("Name 3")
 
 var anotherTown2 = Town(name: "Reutov", citizens: ["Name 122","Name 222"], resources: ["Rice" : 111])
-anotherTown.citizens.append("Name 3")
 
 print(anotherTown)
 print(anotherTown2)
