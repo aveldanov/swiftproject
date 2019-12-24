@@ -28,4 +28,4 @@ let quiz = [
    ]
 
 
-print(quiz[0].a)
+print(quiz[0].answer)
