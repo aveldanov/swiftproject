@@ -14,6 +14,10 @@ struct Town {
     func fortify(){
         print("Defenses increase")
     }
+    
+    mutating func harvestRice(){
+        resources["Rice"] = 100
+    }
 }
 
 
