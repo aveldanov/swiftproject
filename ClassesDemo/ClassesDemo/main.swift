@@ -3,13 +3,15 @@
 let skeleton = Enemy()
 
 
-print(skeleton.health)
+//print(skeleton.health)
 
-skeleton.attack()
-skeleton.move()
+//skeleton.attack()
+//skeleton.move()
 
 let dragon = Dragon()
+//dragon.attackStrength = 15
+//dragon.talk(speech: "Hello people")
+//
+//dragon.move()
 
-
-
-print(dragon.health)
+dragon.attack()
