@@ -2,7 +2,5 @@ protocol AdvancedLifeSupport {
     func performCPR()
     
     
-    
-    
 }
 
