@@ -24,7 +24,7 @@ class Bird{
 }
 
 
-class Eagle: Bird,CanFly {
+class Eagle: Bird, CanFly {
     func fly() {
         print("EAGLE FLIES")
     }
@@ -63,7 +63,7 @@ struct Airplane: CanFly {
 
 let myEagle = Eagle()
 let myPenguin = Penguin()
-let  museum = FlyingMuseum()
+let museum = FlyingMuseum()
 let myPlane = Airplane()
 
 museum.flyingDemos(flyingObject: myEagle)
