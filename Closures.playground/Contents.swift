@@ -31,10 +31,6 @@ array.map(addOne)
 
 
 
-
-
-
-
 //func calculator (n1: Int, n2: Int, operation: (Int, Int)-> Int) -> Int{
 //
 //    return operation(n1, n2)
