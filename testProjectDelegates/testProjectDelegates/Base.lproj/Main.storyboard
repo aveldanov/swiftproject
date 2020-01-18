@@ -37,11 +37,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="TNk-5D-yan">
             <objects>
-                <viewController id="Oe3-gH-Eqy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fw7-84-L6d">
+                <viewController id="Oe3-gH-Eqy" customClass="SecondViewController" customModule="testProjectDelegates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fw7-84-L6d" customClass="Re">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -58,16 +58,29 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="LIGHT"/>
+                                <connections>
+                                    <action selector="goBackButtonPressed:" destination="Oe3-gH-Eqy" eventType="touchUpInside" id="5fz-mx-4bP"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OUTPUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-PC-GJR">
+                                <rect key="frame" x="122" y="424" width="157" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="QZH-4z-LUh"/>
                     </view>
                     <navigationItem key="navigationItem" id="R2K-vb-3V9"/>
+                    <connections>
+                        <outlet property="outputLabel" destination="SqU-PC-GJR" id="bGN-47-2Sq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy1-xA-9Ts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="137"/>
+            <point key="canvasLocation" x="959.4202898550725" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>

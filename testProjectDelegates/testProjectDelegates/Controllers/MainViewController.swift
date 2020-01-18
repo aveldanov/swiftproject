@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var chooseButton: UIButton!
     
+    let value:String = "RESULT"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
@@ -26,7 +28,11 @@ class MainViewController: UIViewController {
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         
         
-        let selectVC = 
+        let secondVC = SecondViewController()
+        
+        secondVC.valueSecond = "RESULT"
+        
+        self.present(secondVC, animated: true, completion: nil)
         
     }
     
