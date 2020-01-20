@@ -10,7 +10,6 @@ extension UIButton{
         self.clipsToBounds = true
         self.layer.cornerRadius = self.frame.size.width/2
     }
-    
 }
 
 button.makeCircular()
