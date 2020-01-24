@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2103A56023DA71E1006781D0 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A55F23DA71E1006781D0 /* Combination.swift */; };
+		2103A56223DAA65F006781D0 /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A56123DAA65F006781D0 /* Rows.swift */; };
 		214B81E323DA405100B28C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E223DA405100B28C23 /* AppDelegate.swift */; };
 		214B81E523DA405100B28C23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E423DA405100B28C23 /* SceneDelegate.swift */; };
 		214B81E723DA405100B28C23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E623DA405100B28C23 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2103A55F23DA71E1006781D0 /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
+		2103A56123DAA65F006781D0 /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
 		214B81DF23DA405100B28C23 /* MasterMind-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MasterMind-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		214B81E223DA405100B28C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		214B81E423DA405100B28C23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				214B81E223DA405100B28C23 /* AppDelegate.swift */,
 				214B81E423DA405100B28C23 /* SceneDelegate.swift */,
 				214B81E623DA405100B28C23 /* ViewController.swift */,
+				2103A55F23DA71E1006781D0 /* Combination.swift */,
+				2103A56123DAA65F006781D0 /* Rows.swift */,
 				214B81E823DA405100B28C23 /* Main.storyboard */,
 				214B81EB23DA405300B28C23 /* Assets.xcassets */,
 				214B81ED23DA405300B28C23 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 				214B81E723DA405100B28C23 /* ViewController.swift in Sources */,
 				214B81E323DA405100B28C23 /* AppDelegate.swift in Sources */,
 				214B81E523DA405100B28C23 /* SceneDelegate.swift in Sources */,
+				2103A56223DAA65F006781D0 /* Rows.swift in Sources */,
+				2103A56023DA71E1006781D0 /* Combination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
