@@ -19,6 +19,9 @@ var newArr: [Int] = []
 var extArr:[Int] = []
 
 
+//var closeCount = 0
+//var letter = "5"
+//let savedExact = 0
 
 let urlString = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
 print("HELLO")
@@ -41,11 +44,8 @@ func performRequest(urlString:String){
                 return
             }
             if let safeData = data{
-                
-                
-                
                 let dataString = String(data: safeData, encoding: .utf8)
-                //                newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
+//                newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
                 
                 let input = getData(randomData: safeData)
                 useData(input: input)
@@ -66,74 +66,52 @@ func performRequest(urlString:String){
 
 func getData(randomData: Data) -> [Int]{
     let dataString = String(data: randomData, encoding: .utf8)
-    
+
     newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
-    
-        print("Inside get data:", newArr)
-    
-    return newArr
+
+//    print("Inside get data:", newArr)
+
+return newArr
 }
 
 
 //var newestArr = [4]
 func useData(input:[Int]){
-    var countt = 3
-    let  newestArr = input
-    
-    
+ var countt = 3
+          let  newestArr = input
+         
+//    print("inside useData",newestArr)
     
 
-    
-    
-        print("inside useData",newestArr)
-    
-    
-    func runn2(){
-
-        while exact<length && guesses > 0 {
-            print("HHHHHH")
+    func run(){
         
-            
-            exact+=1
-            guesses-=1
-            
+//        print("YO")
+    }
     
-            if exact == length{
-                print("RIGHT")
-                break
-            }
-            
-            
-            
-        }
-
+    for i in 0...countt{
+        
+        run()
 
     }
 
-    for attempt in 0...4{
-    print("RUN1")
 
-              runn2()
-            break
-    
-    }
-
-    
-    
-    
 }
 
 
 
 func running(){
-    
 
+
+//    print("input running", input)
+    
+    
+    
     while exact < length && guesses > 0{
         exact = 0
         close = 0
         
-        
-        
+
+    
         // READ ARRAY AS INT
         let arrayNew = readLine()?
             .split {$0 == " "}
@@ -158,17 +136,17 @@ func running(){
         
         // COMPARE and get CLOSE
         print("patternDic", patternDict)
-        print("arrayDic", arrayDict)
+                  print("arrayDic", arrayDict)
         for item in patternDict.keys{
-            
-            //                    print("item pattern dict key", item)
+          
+//                    print("item pattern dict key", item)
             
             if (arrayDict[item] != nil){
-                //                            print("item",item," array", arrayDict[item])
-                //                print("Min:", min(patternDict[item]!,arrayDict[item]!))
+//                            print("item",item," array", arrayDict[item])
+//                print("Min:", min(patternDict[item]!,arrayDict[item]!))
                 close = close + min(patternDict[item]!,arrayDict[item]!)
-//                print("close", close)
-//                print("")
+                print("close", close)
+                 print("")
             }
             
         }
@@ -188,41 +166,37 @@ func running(){
                 exact = exact + 1
                 close = close - 1
             }
-            //                    print("PRINTING: \(val1) has \(val2)")
+//                    print("PRINTING: \(val1) has \(val2)")
         }
         
-        print("")
+
         print("EXACT: \(exact)  CLOSE: \(close)")
-
-        if exact==length{
-            print("You got it right!")
-            break
-        }else{
-            print("Continue, guesses rem: \(guesses)")
-        }
-
-
         
         guesses = guesses - 1
         
-        
+        print("Continue, guesses rem: \(guesses)")
+        print("")
         
     }
     
 }
 
-
 performRequest(urlString: urlString)
 
 
+
 print("Insert 4 numbers and space between, then hit enter:")
-for attempt in 0...(guesses-1){
+    for attempt in 0...(guesses-1){
+        if (exact < length){
+            running()
+            print("The code was \(pattern)")
+            break
+        }else{
+            print("GAME OVER")
+            break
+        }
+    }
 
-        running()
-//        print("The code was \(pattern)")
-        break
+
     
-}
-
-
 
