@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  MasterMind-iOS13
@@ -11,10 +12,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bingoLabel: UILabel!
-    
-    @IBOutlet weak var tryAgainLabel: UILabel!
-    
-    
     @IBOutlet weak var numberView0: UIImageView!
     @IBOutlet weak var numberView1: UIImageView!
     @IBOutlet weak var numberView2: UIImageView!
@@ -76,15 +73,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var verifyRow8: UIImageView!
     @IBOutlet weak var verifyRow9: UIImageView!
     
-   
-    
     
     
     var counter = 0
     var row = 0
     let targetArr = [1,2,3,5]
-    var pattern:[Int] = []
-    
     var arrayNum = [
         [8,8,8,8],
         [8,8,8,8],
@@ -99,7 +92,8 @@ class ViewController: UIViewController {
         [8,8,8,8]
     ]
     var arrayVerNum = [0,0,0,0,0,0,0,0,0,0]
-    
+    var pattern = [8,8,8,8]
+
     
     var close = 0
     var exact = 0
@@ -124,7 +118,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         bingoLabel.alpha = 0
-        tryAgainLabel.alpha = 0
         resultView0row0.image = #imageLiteral(resourceName: "noneElement")
         resultView1row0.image = #imageLiteral(resourceName: "noneElement")
         resultView2row0.image = #imageLiteral(resourceName: "noneElement")
@@ -166,25 +159,158 @@ class ViewController: UIViewController {
         resultView2row9.image = #imageLiteral(resourceName: "noneElement")
         resultView3row9.image = #imageLiteral(resourceName: "noneElement")
         
+        getRandomArray()
         
-        numberView0.image = #imageLiteral(resourceName: "Zero")
-        numberView1.image = #imageLiteral(resourceName: "One")
-        numberView2.image = #imageLiteral(resourceName: "Two")
-        numberView3.image = #imageLiteral(resourceName: "Three")
-        numberView4.image = #imageLiteral(resourceName: "Four")
-        numberView5.image = #imageLiteral(resourceName: "Five")
-        numberView6.image = #imageLiteral(resourceName: "Six")
-        numberView7.image = #imageLiteral(resourceName: "Seven")
-
         
     }
     
     
-    let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
+        let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
+
+        
+          func getRandomArray() {
+              
+              let urlString = baseURL
+              
+              if let url = URL(string: urlString) {
+                  
+                  let session = URLSession(configuration: .default)
+                  let task = session.dataTask(with: url) { (data, response, error) in
+                      if error != nil {
+                          self.didFailWithError(error: error!)
+                          return
+                      }
+                      
+                      if let safeData = data {
+
+                          let dataString = String(data: safeData, encoding: .utf8)
+
+                          let newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
+    //                      print(newArr)
+                          
+                               self.didUpdateRandomArray(price: newArr)
+                      }
+                  }
+                  task.resume()
+              }
+          }
+        
+        
+        func didUpdateRandomArray(price: [Int]){
+             
+             DispatchQueue.main.async {
+    //             self.bitcoinLabel.text = String(price)
+                
+                self.pattern = price
+             }
+            print(pattern)
+            
+            for attempt in 0...(guesses-1){
+
+                    running(input: pattern)
+                    print("The code was \(pattern)")
+                    break
+                
+            }
+            
+            
+         }
+        
+
+         
+         func didFailWithError(error: Error) {
+             print(error)
+         }
+       
+    func running(input:[Int]){
+        let pattern = input
+
+        while exact < length && guesses > 0{
+            exact = 0
+            close = 0
+            
+            
+            
+            // READ ARRAY AS INT
+//            let arrayNew = readLine()?
+//                .split {$0 == " "}
+//                .map {Int(String($0))!}
+//            print(arrayNew!)
+//
+//            array = arrayNew!
+            
+            
+            let mappedPattern = pattern.map{($0,1)}
+            var patternDict = Dictionary(mappedPattern, uniquingKeysWith: +)
+            
+            
+            let mappedArray = array.map{($0,1)}
+            let arrayDict = Dictionary(mappedArray, uniquingKeysWith: +)
+            
+            //        print(patternDict)
+            //        print(arrayDict)
+            
+            
+            
+            
+            // COMPARE and get CLOSE
+            print("patternDic", patternDict)
+            print("arrayDic", arrayDict)
+            for item in patternDict.keys{
+                
+                //                    print("item pattern dict key", item)
+                
+                if (arrayDict[item] != nil){
+                    //                            print("item",item," array", arrayDict[item])
+                    //                print("Min:", min(patternDict[item]!,arrayDict[item]!))
+                    close = close + min(patternDict[item]!,arrayDict[item]!)
+    //                print("close", close)
+    //                print("")
+                }
+                
+            }
+            
+            //        print("CLOSE: \(close)")
+            
+            
+            
+            let zippped = Array(zip(pattern,array))
+            
+            //    print("Zipped \(zippped)")
+            
+            
+            // combined array in pairs (1,1) etc
+            for (val1, val2) in zip(pattern, array) {
+                if val1 == val2{
+                    exact = exact + 1
+                    close = close - 1
+                }
+                //                    print("PRINTING: \(val1) has \(val2)")
+            }
+            
+            print("")
+            print("EXACT: \(exact)  CLOSE: \(close)")
+
+            if exact==length{
+                print("You got it right!")
+                break
+            }else{
+                print("Continue, guesses rem: \(guesses)")
+            }
+
+
+            
+            guesses = guesses - 1
+            
+            
+            
+        }
+        
+    }
+
     
     
-    
-    
+
     
     
     
@@ -210,7 +336,7 @@ class ViewController: UIViewController {
         if counter < 4{
             
             arrayNum[row][counter] = numberSelected
-            //                        print(arrayNum[row])
+            //            print(arrayNum)
             updateUI()
             
             counter = counter + 1
@@ -228,37 +354,24 @@ class ViewController: UIViewController {
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         
-        
-        
-        
         colorPickNum = verifyColor(close: 1, exact: 1)
         
-        //        print("RIGHT ", array)
-        
         arrayVerNum[row] = colorPickNum
-        //        print(arrayVerNum)
-        print("checkButton", arrayNum[row])
-        
-        array = arrayNum[row]
-        
-        getRandomArray(for: array)
-        
+        print(arrayVerNum)
+        //        print(arrayNum)
         updateVerify()
+        
         if arrayNum[0].contains(5){
             print("Yay")
+            bingoLabel.alpha = 1
             row = row + 1
             counter = 0
-            
         }else{
             row = row + 1
             counter = 0
         }
     }
     
-    func getTypedInput()->[Int]{
-        print("YOY",arrayNum[row])
-        return arrayNum[row]
-    }
     
     
     func verifyColor(close:Int, exact:Int)->Int{
@@ -367,185 +480,8 @@ class ViewController: UIViewController {
         verifyRow7.image = verifyImages[arrayVerNum[7]]
         verifyRow8.image = verifyImages[arrayVerNum[8]]
         verifyRow9.image = verifyImages[arrayVerNum[9]]
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func getRandomArray(for array:[Int]) {
-        
-        let urlString = baseURL
-        
-        if let url = URL(string: urlString) {
-            
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.didFailWithError(error: error!)
-                    return
-                }
-                
-                if let safeData = data {
-                    
-                    let dataString = String(data: safeData, encoding: .utf8)
-                    
-                    let newPattern = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
-                    print(newPattern)
-                    
-                    self.didUpdateRandomArray(patternInput: newPattern, array: array)
-                }
-            }
-            task.resume()
-        }
-    }
-    
-    
-    func didUpdateRandomArray(patternInput: [Int], array:[Int]){
-        
-        while pattern == []{
-            DispatchQueue.main.async {
-                self.pattern = patternInput
-            }
-        
-        }
-            
-             
-        
-    
-                        print("GUESS",guesses)
-                        running(input: pattern, array: array)
-        
-//        for attempt in 0...(guesses){
-//            if guesses>0{
-//                print("GUESS",guesses)
-//                running(input: pattern, array: array)
-//
-//            }else{
-//                print("The code was \(pattern)")
-//                break
-//            }
-//
-//        }
-        
-        
-    }
-    
-    
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-    
-    func running(input:[Int], array:[Int]){
-        let pattern = input
-        
-        print("array", array, "pattern", pattern)
-        
-        if guesses > 0{
-            exact = 0
-            close = 0
-            
-            
-            
-            // READ ARRAY AS INT
-            //            let arrayNew = readLine()?
-            //                .split {$0 == " "}
-            //                .map {Int(String($0))!}
-            //            print(arrayNew!)
-            //
-            //            array = arrayNew!
-            
-            
-            let mappedPattern = pattern.map{($0,1)}
-            var patternDict = Dictionary(mappedPattern, uniquingKeysWith: +)
-            
-            
-            let mappedArray = array.map{($0,1)}
-            let arrayDict = Dictionary(mappedArray, uniquingKeysWith: +)
-            
-            //        print(patternDict)
-            //        print(arrayDict)
-            
-            
-            
-            
-            // COMPARE and get CLOSE
-            print("patternDic", patternDict)
-            print("arrayDic", arrayDict)
-            for item in patternDict.keys{
-                
-                //                    print("item pattern dict key", item)
-                
-                if (arrayDict[item] != nil){
-                    //                            print("item",item," array", arrayDict[item])
-                    //                print("Min:", min(patternDict[item]!,arrayDict[item]!))
-                    close = close + min(patternDict[item]!,arrayDict[item]!)
-                    //                print("close", close)
-                    //                print("")
-                }
-                
-            }
-            
-            //        print("CLOSE: \(close)")
-            
-            
-            
-            let zippped = Array(zip(pattern,array))
-            
-            //    print("Zipped \(zippped)")
-            
-            
-            // combined array in pairs (1,1) etc
-            for (val1, val2) in zip(pattern, array) {
-                if val1 == val2{
-                    exact = exact + 1
-                    close = close - 1
-                }
-                //                    print("PRINTING: \(val1) has \(val2)")
-            }
-            
-            print("")
-            print("EXACT: \(exact)  CLOSE: \(close)")
-            
-            if exact==length{
-                
-                DispatchQueue.main.async{                self.bingoLabel.alpha = 0.8
-                    print("You got it right!")
-                    
-                }
-            }else{
-                print("Continue, guesses rem: \(guesses)")
-            }
-            
-            guesses = guesses - 1
-            
-        
-        }else{
-            
-            DispatchQueue.main.async{
-                self.tryAgainLabel.alpha = 0.8
-                
-            }
-            print("DONE")
-            print("Answer: \(pattern)")
 
-        }
-        
     }
-    
-    
-    
-    
-
     
     
     

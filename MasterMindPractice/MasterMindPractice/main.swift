@@ -80,45 +80,7 @@ func useData(input:[Int]){
     var countt = 3
     let  newestArr = input
     
-    
-    
-
-    
-    
         print("inside useData",newestArr)
-    
-    
-    func runn2(){
-
-        while exact<length && guesses > 0 {
-            print("HHHHHH")
-        
-            
-            exact+=1
-            guesses-=1
-            
-    
-            if exact == length{
-                print("RIGHT")
-                break
-            }
-            
-            
-            
-        }
-
-
-    }
-
-    for attempt in 0...4{
-    print("RUN1")
-
-              runn2()
-            break
-    
-    }
-
-    
     
     
 }

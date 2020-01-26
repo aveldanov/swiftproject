@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  MasterMind-iOS13
@@ -11,10 +12,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bingoLabel: UILabel!
-    
-    @IBOutlet weak var tryAgainLabel: UILabel!
-    
-    
     @IBOutlet weak var numberView0: UIImageView!
     @IBOutlet weak var numberView1: UIImageView!
     @IBOutlet weak var numberView2: UIImageView!
@@ -76,15 +73,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var verifyRow8: UIImageView!
     @IBOutlet weak var verifyRow9: UIImageView!
     
-   
-    
+    @IBOutlet weak var randomArrayView: UILabel!
     
     
     var counter = 0
     var row = 0
     let targetArr = [1,2,3,5]
-    var pattern:[Int] = []
-    
     var arrayNum = [
         [8,8,8,8],
         [8,8,8,8],
@@ -99,6 +93,7 @@ class ViewController: UIViewController {
         [8,8,8,8]
     ]
     var arrayVerNum = [0,0,0,0,0,0,0,0,0,0]
+    var pattern = [8,8,8,8]
     
     
     var close = 0
@@ -124,7 +119,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         bingoLabel.alpha = 0
-        tryAgainLabel.alpha = 0
         resultView0row0.image = #imageLiteral(resourceName: "noneElement")
         resultView1row0.image = #imageLiteral(resourceName: "noneElement")
         resultView2row0.image = #imageLiteral(resourceName: "noneElement")
@@ -167,22 +161,13 @@ class ViewController: UIViewController {
         resultView3row9.image = #imageLiteral(resourceName: "noneElement")
         
         
-        numberView0.image = #imageLiteral(resourceName: "Zero")
-        numberView1.image = #imageLiteral(resourceName: "One")
-        numberView2.image = #imageLiteral(resourceName: "Two")
-        numberView3.image = #imageLiteral(resourceName: "Three")
-        numberView4.image = #imageLiteral(resourceName: "Four")
-        numberView5.image = #imageLiteral(resourceName: "Five")
-        numberView6.image = #imageLiteral(resourceName: "Six")
-        numberView7.image = #imageLiteral(resourceName: "Seven")
-
         
     }
     
     
     let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
     
-    
+
     
     
     
@@ -204,7 +189,7 @@ class ViewController: UIViewController {
         
         let selection = sender.currentTitle!
         numberSelected = numbersOptions[selection]!
-        
+     
         //        print(numberSelected)
         
         if counter < 4{
@@ -233,19 +218,20 @@ class ViewController: UIViewController {
         
         colorPickNum = verifyColor(close: 1, exact: 1)
         
-        //        print("RIGHT ", array)
+//        print("RIGHT ", array)
         
         arrayVerNum[row] = colorPickNum
-        //        print(arrayVerNum)
+//        print(arrayVerNum)
         print("checkButton", arrayNum[row])
         
         array = arrayNum[row]
         
         getRandomArray(for: array)
-        
+
         updateVerify()
         if arrayNum[0].contains(5){
             print("Yay")
+            bingoLabel.alpha = 1
             row = row + 1
             counter = 0
             
@@ -399,7 +385,7 @@ class ViewController: UIViewController {
                     let dataString = String(data: safeData, encoding: .utf8)
                     
                     let newPattern = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
-                    print(newPattern)
+                    //                      print(newArr)
                     
                     self.didUpdateRandomArray(patternInput: newPattern, array: array)
                 }
@@ -411,30 +397,20 @@ class ViewController: UIViewController {
     
     func didUpdateRandomArray(patternInput: [Int], array:[Int]){
         
-        while pattern == []{
-            DispatchQueue.main.async {
-                self.pattern = patternInput
-            }
-        
-        }
+        DispatchQueue.main.async {
+            //             self.bitcoinLabel.text = String(price)
             
-             
-        
-    
-                        print("GUESS",guesses)
-                        running(input: pattern, array: array)
-        
-//        for attempt in 0...(guesses){
-//            if guesses>0{
-//                print("GUESS",guesses)
-//                running(input: pattern, array: array)
-//
-//            }else{
-//                print("The code was \(pattern)")
-//                break
-//            }
-//
-//        }
+            self.pattern = patternInput
+
+        }
+        print(pattern)
+        for attempt in 0...(guesses-1){
+            
+            running(input: pattern, array: array)
+            print("The code was \(pattern)")
+            break
+            
+        }
         
         
     }
@@ -447,10 +423,10 @@ class ViewController: UIViewController {
     
     func running(input:[Int], array:[Int]){
         let pattern = input
+     print("array", array, "pattern", pattern)
+
         
-        print("array", array, "pattern", pattern)
-        
-        if guesses > 0{
+        while exact < length && guesses > 0{
             exact = 0
             close = 0
             
@@ -517,27 +493,17 @@ class ViewController: UIViewController {
             print("EXACT: \(exact)  CLOSE: \(close)")
             
             if exact==length{
-                
-                DispatchQueue.main.async{                self.bingoLabel.alpha = 0.8
-                    print("You got it right!")
-                    
-                }
+                print("You got it right!")
+                break
             }else{
                 print("Continue, guesses rem: \(guesses)")
             }
             
+            
+            
             guesses = guesses - 1
             
-        
-        }else{
             
-            DispatchQueue.main.async{
-                self.tryAgainLabel.alpha = 0.8
-                
-            }
-            print("DONE")
-            print("Answer: \(pattern)")
-
         }
         
     }
@@ -545,7 +511,7 @@ class ViewController: UIViewController {
     
     
     
-
+    
     
     
     

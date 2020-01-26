@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  MasterMind-iOS13
@@ -11,10 +12,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bingoLabel: UILabel!
-    
-    @IBOutlet weak var tryAgainLabel: UILabel!
-    
-    
     @IBOutlet weak var numberView0: UIImageView!
     @IBOutlet weak var numberView1: UIImageView!
     @IBOutlet weak var numberView2: UIImageView!
@@ -76,8 +73,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var verifyRow8: UIImageView!
     @IBOutlet weak var verifyRow9: UIImageView!
     
-   
-    
+    @IBOutlet weak var randomArrayView: UILabel!
     
     
     var counter = 0
@@ -124,7 +120,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         bingoLabel.alpha = 0
-        tryAgainLabel.alpha = 0
         resultView0row0.image = #imageLiteral(resourceName: "noneElement")
         resultView1row0.image = #imageLiteral(resourceName: "noneElement")
         resultView2row0.image = #imageLiteral(resourceName: "noneElement")
@@ -167,15 +162,6 @@ class ViewController: UIViewController {
         resultView3row9.image = #imageLiteral(resourceName: "noneElement")
         
         
-        numberView0.image = #imageLiteral(resourceName: "Zero")
-        numberView1.image = #imageLiteral(resourceName: "One")
-        numberView2.image = #imageLiteral(resourceName: "Two")
-        numberView3.image = #imageLiteral(resourceName: "Three")
-        numberView4.image = #imageLiteral(resourceName: "Four")
-        numberView5.image = #imageLiteral(resourceName: "Five")
-        numberView6.image = #imageLiteral(resourceName: "Six")
-        numberView7.image = #imageLiteral(resourceName: "Seven")
-
         
     }
     
@@ -246,6 +232,7 @@ class ViewController: UIViewController {
         updateVerify()
         if arrayNum[0].contains(5){
             print("Yay")
+            bingoLabel.alpha = 1
             row = row + 1
             counter = 0
             
@@ -411,30 +398,26 @@ class ViewController: UIViewController {
     
     func didUpdateRandomArray(patternInput: [Int], array:[Int]){
         
-        while pattern == []{
+    
             DispatchQueue.main.async {
-                self.pattern = patternInput
-            }
-        
-        }
-            
+                    self.pattern = patternInput
+                }
              
         
     
-                        print("GUESS",guesses)
-                        running(input: pattern, array: array)
         
-//        for attempt in 0...(guesses){
-//            if guesses>0{
-//                print("GUESS",guesses)
-//                running(input: pattern, array: array)
-//
-//            }else{
-//                print("The code was \(pattern)")
-//                break
-//            }
-//
-//        }
+        
+        for attempt in 0...(guesses){
+            if guesses>0{
+                print("GUESS",guesses)
+                running(input: pattern, array: array)
+                
+            }else{
+                print("The code was \(pattern)")
+                break
+            }
+            
+        }
         
         
     }
@@ -446,11 +429,11 @@ class ViewController: UIViewController {
     }
     
     func running(input:[Int], array:[Int]){
-        let pattern = input
+         pattern = input
         
         print("array", array, "pattern", pattern)
         
-        if guesses > 0{
+        while exact < length && guesses > 0{
             exact = 0
             close = 0
             
@@ -517,27 +500,13 @@ class ViewController: UIViewController {
             print("EXACT: \(exact)  CLOSE: \(close)")
             
             if exact==length{
-                
-                DispatchQueue.main.async{                self.bingoLabel.alpha = 0.8
-                    print("You got it right!")
-                    
-                }
+                print("You got it right!")
             }else{
                 print("Continue, guesses rem: \(guesses)")
             }
             
             guesses = guesses - 1
             
-        
-        }else{
-            
-            DispatchQueue.main.async{
-                self.tryAgainLabel.alpha = 0.8
-                
-            }
-            print("DONE")
-            print("Answer: \(pattern)")
-
         }
         
     }

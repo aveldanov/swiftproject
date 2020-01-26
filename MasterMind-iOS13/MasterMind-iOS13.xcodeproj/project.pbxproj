@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2103A56023DA71E1006781D0 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A55F23DA71E1006781D0 /* Combination.swift */; };
 		2103A56223DAA65F006781D0 /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A56123DAA65F006781D0 /* Rows.swift */; };
+		210E633423DD56DA00DA6E1B /* archive1 in Resources */ = {isa = PBXBuildFile; fileRef = 210E633323DD56DA00DA6E1B /* archive1 */; };
+		210E633623DD656200DA6E1B /* archive2 in Resources */ = {isa = PBXBuildFile; fileRef = 210E633523DD656200DA6E1B /* archive2 */; };
+		210E633923DD76C500DA6E1B /* archive3 in Resources */ = {isa = PBXBuildFile; fileRef = 210E633823DD76C500DA6E1B /* archive3 */; };
 		21130A0F23DD0942002DC109 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21130A0E23DD0942002DC109 /* README.md */; };
 		21130A1123DD1551002DC109 /* archive in Resources */ = {isa = PBXBuildFile; fileRef = 21130A1023DD1551002DC109 /* archive */; };
 		214B81E323DA405100B28C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E223DA405100B28C23 /* AppDelegate.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		2103A55F23DA71E1006781D0 /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		2103A56123DAA65F006781D0 /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
+		210E633323DD56DA00DA6E1B /* archive1 */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive1; sourceTree = "<group>"; };
+		210E633523DD656200DA6E1B /* archive2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive2; sourceTree = "<group>"; };
+		210E633823DD76C500DA6E1B /* archive3 */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive3; sourceTree = "<group>"; };
 		21130A0E23DD0942002DC109 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21130A1023DD1551002DC109 /* archive */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive; sourceTree = "<group>"; };
 		214B81DF23DA405100B28C23 /* MasterMind-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MasterMind-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,13 +75,16 @@
 				214B81E223DA405100B28C23 /* AppDelegate.swift */,
 				214B81E423DA405100B28C23 /* SceneDelegate.swift */,
 				214B81E623DA405100B28C23 /* ViewController.swift */,
-				21130A1023DD1551002DC109 /* archive */,
 				2103A55F23DA71E1006781D0 /* Combination.swift */,
+				210E633823DD76C500DA6E1B /* archive3 */,
 				2103A56123DAA65F006781D0 /* Rows.swift */,
 				214B81E823DA405100B28C23 /* Main.storyboard */,
 				214B81EB23DA405300B28C23 /* Assets.xcassets */,
 				214B81ED23DA405300B28C23 /* LaunchScreen.storyboard */,
 				214B81F023DA405300B28C23 /* Info.plist */,
+				21130A1023DD1551002DC109 /* archive */,
+				210E633323DD56DA00DA6E1B /* archive1 */,
+				210E633523DD656200DA6E1B /* archive2 */,
 			);
 			path = "MasterMind-iOS13";
 			sourceTree = "<group>";
@@ -146,8 +155,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21130A0F23DD0942002DC109 /* README.md in Resources */,
+				210E633423DD56DA00DA6E1B /* archive1 in Resources */,
+				210E633623DD656200DA6E1B /* archive2 in Resources */,
 				21130A1123DD1551002DC109 /* archive in Resources */,
 				214B81EF23DA405300B28C23 /* LaunchScreen.storyboard in Resources */,
+				210E633923DD76C500DA6E1B /* archive3 in Resources */,
 				214B81EC23DA405300B28C23 /* Assets.xcassets in Resources */,
 				214B81EA23DA405100B28C23 /* Main.storyboard in Resources */,
 			);
