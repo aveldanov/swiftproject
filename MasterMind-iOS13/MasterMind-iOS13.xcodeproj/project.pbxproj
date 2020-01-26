@@ -48,6 +48,7 @@
 		214B81D623DA405100B28C23 = {
 			isa = PBXGroup;
 			children = (
+				21B156D523DD1B19002C39EA /* DOCUMENTATION */,
 				21130A0E23DD0942002DC109 /* README.md */,
 				214B81E123DA405100B28C23 /* MasterMind-iOS13 */,
 				214B81E023DA405100B28C23 /* Products */,
@@ -77,6 +78,13 @@
 				214B81F023DA405300B28C23 /* Info.plist */,
 			);
 			path = "MasterMind-iOS13";
+			sourceTree = "<group>";
+		};
+		21B156D523DD1B19002C39EA /* DOCUMENTATION */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DOCUMENTATION;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
