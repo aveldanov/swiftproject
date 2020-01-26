@@ -1,6 +1,6 @@
 
 
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
+![](Documentation/image.png)
 
 #  MASTERMIND by Anton Veldanov
 
