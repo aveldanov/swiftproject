@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2103A56023DA71E1006781D0 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A55F23DA71E1006781D0 /* Combination.swift */; };
 		2103A56223DAA65F006781D0 /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103A56123DAA65F006781D0 /* Rows.swift */; };
-		21130A0F23DD0942002DC109 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 21130A0E23DD0942002DC109 /* File */; };
+		21130A0F23DD0942002DC109 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21130A0E23DD0942002DC109 /* README.md */; };
 		21130A1123DD1551002DC109 /* archive in Resources */ = {isa = PBXBuildFile; fileRef = 21130A1023DD1551002DC109 /* archive */; };
 		214B81E323DA405100B28C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E223DA405100B28C23 /* AppDelegate.swift */; };
 		214B81E523DA405100B28C23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B81E423DA405100B28C23 /* SceneDelegate.swift */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		2103A55F23DA71E1006781D0 /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		2103A56123DAA65F006781D0 /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
-		21130A0E23DD0942002DC109 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		21130A0E23DD0942002DC109 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21130A1023DD1551002DC109 /* archive */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive; sourceTree = "<group>"; };
 		214B81DF23DA405100B28C23 /* MasterMind-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MasterMind-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		214B81E223DA405100B28C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		214B81D623DA405100B28C23 = {
 			isa = PBXGroup;
 			children = (
-				21130A0E23DD0942002DC109 /* File */,
+				21130A0E23DD0942002DC109 /* README.md */,
 				214B81E123DA405100B28C23 /* MasterMind-iOS13 */,
 				214B81E023DA405100B28C23 /* Products */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21130A0F23DD0942002DC109 /* File in Resources */,
+				21130A0F23DD0942002DC109 /* README.md in Resources */,
 				21130A1123DD1551002DC109 /* archive in Resources */,
 				214B81EF23DA405300B28C23 /* LaunchScreen.storyboard in Resources */,
 				214B81EC23DA405300B28C23 /* Assets.xcassets in Resources */,
