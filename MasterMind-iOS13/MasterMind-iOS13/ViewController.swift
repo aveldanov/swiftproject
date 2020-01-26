@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     var numberSelected = 0
     
     let length = 4
-    var guesses = 2
+    var guesses = 9
     var array = [6,6,6,6]
     
     
@@ -207,7 +207,7 @@ class ViewController: UIViewController {
         
         //        print(numberSelected)
         
-        if counter < 4{
+    
             
             arrayNum[row][counter] = numberSelected
             //                        print(arrayNum[row])
@@ -215,12 +215,7 @@ class ViewController: UIViewController {
             
             counter = counter + 1
             
-        }else{
-            row = row + 1
-            counter = 0
-            print("ELSE")
-            updateUI()
-        }
+        
         
         
     }
@@ -231,28 +226,19 @@ class ViewController: UIViewController {
         
         
         
-        colorPickNum = verifyColor(close: 1, exact: 1)
         
         //        print("RIGHT ", array)
         
-        arrayVerNum[row] = colorPickNum
-        //        print(arrayVerNum)
+     
         print("checkButton", arrayNum[row])
         
         array = arrayNum[row]
         
         getRandomArray(for: array)
         
-        updateVerify()
-        if arrayNum[0].contains(5){
-            print("Yay")
-            row = row + 1
+        
             counter = 0
-            
-        }else{
-            row = row + 1
-            counter = 0
-        }
+        
     }
     
     func getTypedInput()->[Int]{
@@ -449,7 +435,7 @@ class ViewController: UIViewController {
         let pattern = input
         
         print("array", array, "pattern", pattern)
-        
+
         if guesses > 0{
             exact = 0
             close = 0
@@ -513,6 +499,17 @@ class ViewController: UIViewController {
                 //                    print("PRINTING: \(val1) has \(val2)")
             }
             
+            
+            colorPickNum = verifyColor(close: close, exact: exact)
+            
+            
+            arrayVerNum[row] = colorPickNum
+            print(arrayVerNum)
+            
+            DispatchQueue.main.async{
+                self.updateVerify()
+            }
+            print(colorPickNum)
             print("")
             print("EXACT: \(exact)  CLOSE: \(close)")
             
@@ -528,7 +525,8 @@ class ViewController: UIViewController {
             
             guesses = guesses - 1
             
-        
+        row = row + 1
+
         }else{
             
             DispatchQueue.main.async{
