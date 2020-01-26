@@ -1,6 +1,6 @@
 
 
-![](DOCUMENTATION/image.png)
+![](DOCUMENTATION/imagemast.png)
 
 #  MASTERMIND by Anton Veldanov
 
