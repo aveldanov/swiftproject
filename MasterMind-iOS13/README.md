@@ -2,6 +2,8 @@
 
 ![](DOCUMENTATION/image.png)
 
+![](DOCUMENTATION/Mastermind.pdf)
+
 #  MASTERMIND by Anton Veldanov
 
 ## The Goal
