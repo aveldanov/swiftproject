@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  MasterMind-iOS13
@@ -90,7 +91,7 @@ class ViewController: UIViewController {
         [8,8,8,8],
         [8,8,8,8]
     ]
-    var arrayVerNum = [0,0,0,0,0,0,0,0,0,0]
+    var arrayVerNum = [0,0,0,0,0,0,0,0,0]
     
     var close = 0
     var exact = 0
@@ -307,15 +308,6 @@ class ViewController: UIViewController {
     func updateVerify(){
         verifyRow0.image = verifyImages[arrayVerNum[0]]
         verifyRow1.image = verifyImages[arrayVerNum[1]]
-        verifyRow2.image = verifyImages[arrayVerNum[2]]
-        verifyRow3.image = verifyImages[arrayVerNum[3]]
-        verifyRow4.image = verifyImages[arrayVerNum[4]]
-        verifyRow5.image = verifyImages[arrayVerNum[5]]
-        verifyRow6.image = verifyImages[arrayVerNum[6]]
-        verifyRow7.image = verifyImages[arrayVerNum[7]]
-        verifyRow8.image = verifyImages[arrayVerNum[8]]
-        verifyRow9.image = verifyImages[arrayVerNum[9]]
-
     }
     
     
