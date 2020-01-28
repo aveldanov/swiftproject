@@ -2,14 +2,14 @@
 
 ![](DOCUMENTATION/imagemast.png)
 
-##System Requirements:
+### System Requirements:
 iOS – 13.2 or later
 Mobile device model – iPhone 11 Pro Max
 Xcode version – 11.3.1
 Operation System – MacOS Catalina 10.15.2
 
 
-##The goal
+### The goal
 
 Implement a mastermind game, which can be played by a user "against" the computer.
 This game where a player tries to guess the number combinations.
