@@ -3,10 +3,10 @@
 ![](DOCUMENTATION/imagemast.png)
 
 ### System Requirements:
-iOS – 13.2 or later
-Mobile device model – iPhone 11 Pro Max
-Xcode version – 11.3.1
-Operation System – MacOS Catalina 10.15.2
+-    iOS – 13.2 or later
+-    Mobile device model – iPhone 11 Pro Max
+-    Xcode version – 11.3.1
+-    Operation System – MacOS Catalina 10.15.2
 
 
 ### The goal
@@ -17,12 +17,12 @@ At the end of each attempt to guess the 4 number combinations, the computer will
 A player must guess the right number combinations within 10 attempts to win the game.
 
 
-What was created
+### What was created
 
 
 Created an interactive Mastermind game app with enabled random number generator API from random.org. The app has a graphic UI interface that allows to select numbers by clicking respective buttons. 
  
-Technologies/technique used
+### Technologies/technique used
 -    Random.org API to generate random numbers
 -    Use of graphic tools to great visuals - Canva and Appicon
 -    Arrays and Dictionary manipulation
@@ -33,7 +33,7 @@ Technologies/technique used
 -    DispatchQueue.main.async method to run async GET requests
 
 
-How to clone and run the app
+### How to clone and run the app
 
 Head over to the URL below and use it to clone the starting project in Xcode.
 Once the link is clicked it will open a page of the public github repository that hosts the project files.
@@ -41,7 +41,7 @@ Then in the right side of the page click the green ‘click or download’ butto
 Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the welcome screen with the ‘clone an existing project’ option. Otherwise you can go to source control menu then clone option. Both options gets you to the same screen to paste the URL you copied over from github. As soon as pasted, proceed to cloning and save the project on your computer. Once its done cloning you should see the project opened. 
 
 
-Project creation key milestones:
+### Project creation key milestones:
 
 1.    Familiarized with the task and options of implementation. 
 2.    Created initial app flow using draw.ai
@@ -53,7 +53,7 @@ Project creation key milestones:
 8.    Tested functionality
 
 
-Next Steps
+### Next Steps
 -    Refactoring the code
 -    Optional: link to database to manipulate state
 -    Building automation tests
@@ -64,7 +64,7 @@ Next Steps
  
 
 
-How to play
+### How to play
 
 The pattern combination of 4 numbers is automatically generated. Play should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then click the Check get feedback from the game whether the number is guessed correctly. There two types of hits.
 Orange dots show the number of digits guess but the position is not correct. The green dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
