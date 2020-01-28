@@ -512,6 +512,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async{
                 self.tryAgainLabel.alpha = 0.8
             }
+            
             print("DONE")
             print("Answer: \(pattern)")
             
