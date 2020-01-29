@@ -70,3 +70,9 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 The pattern combination of 4 numbers is automatically generated. Play should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then click the Check get feedback from the game whether the number is guessed correctly. There two types of hits.
 Orange dots show the number of digits guess but the position is not correct. The green dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
+
+
+
+
+![](DOCUMENTATION/MasterMindFlow.jpg)
+
