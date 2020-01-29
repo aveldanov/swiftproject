@@ -75,5 +75,5 @@ The pattern combination of 4 numbers is automatically generated. Play should ent
 Orange dots show the number of digits guess but the position is not correct. The green dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
 
 
-![](DOCUMENTATION/MasterMindFlow1.jpg)
+![](DOCUMENTATION/MasterMindFlow.jpg)
 
