@@ -45,7 +45,7 @@ Then on the right side of the page click the green ‘click or download’ butto
 Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the welcome screen with the ‘clone an existing project’ option. Otherwise, you can go to the source control menu then clone option. Both options get you to the same screen to paste the URL you copied over from GitHub. As soon as pasted, proceed to cloning and save the project on your computer. Once it's done cloning you should see the project opened. 
 
 
-### Project creation key milestones:
+### Project creation key milestones
 
 1.    Familiarized with the task and options of implementation. 
 2.    Created initial app flow using draw.ai
