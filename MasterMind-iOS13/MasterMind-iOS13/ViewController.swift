@@ -14,8 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var bingoLabel: UILabel!
     
     @IBOutlet weak var tryAgainLabel: UILabel!
-    
     @IBOutlet weak var progressVIewBar: UIProgressView!
+    
+    @IBOutlet weak var checkButtonView: UIButton!
+    
+    @IBOutlet weak var restartButtonView: UIButton!
     
     @IBOutlet weak var numberView0: UIImageView!
     @IBOutlet weak var numberView1: UIImageView!
@@ -82,8 +85,8 @@ class ViewController: UIViewController {
     
     //MARK: - set inital arguments
     
-    var counter = 0
-    var row = 0
+    var counter = 0 //count clicks
+    var row = 0 //count rows
     let targetArr = [1,2,3,5] // used for testing when could not figure async API reading
     var pattern:[Int] = []  // Computer generated pattern
     
@@ -116,7 +119,7 @@ class ViewController: UIViewController {
     var guesses = 9 //number of guesses minus 1
     var array = [6,6,6,6] // used for testing of user input
     
-    var totalTime = 60
+    var totalTime = 90
     var secondsPassed = 0
     
     //MARK: - images literal
@@ -184,30 +187,76 @@ class ViewController: UIViewController {
         numberView6.image = #imageLiteral(resourceName: "input6")
         numberView7.image = #imageLiteral(resourceName: "input7")
         
-      
-       Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameOver), userInfo: nil, repeats: true)
-
-//        progressVIewBar.progress = 1.0
         
         
         
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameOver), userInfo: nil, repeats: true)
+        
+        //        progressVIewBar.progress = 1.0
+        
+        checkButtonView.layer.cornerRadius = 25.0
+        restartButtonView.layer.cornerRadius = 25.0
     }
     
     @objc func gameOver()
-          {
-            if secondsPassed < totalTime{
-                print("\(secondsPassed) seconds")
-                secondsPassed += 1
-            }else{
-                tryAgainLabel.text = "Out of time"
-                tryAgainLabel.alpha = 1
-            }
-          }
+    {
+        if secondsPassed < totalTime{
+            print("\(secondsPassed) seconds")
+            secondsPassed += 1
+            
+            let percentageProgress = Float(secondsPassed)/Float(totalTime)
+            progressVIewBar.progress = percentageProgress
+        }else{
+            tryAgainLabel.text = "Out of time"
+            tryAgainLabel.alpha = 1
+        }
+    }
     
     
     
     //MARK: - API Url  - random.org to generate random array
     let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
+    
+    
+    
+    
+    @IBAction func restartClicked(_ sender: UIButton) {
+        
+        counter = 0
+        row = 0
+        arrayNum = [
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8],
+            [8,8,8,8]
+        ]
+        arrayVerNum = [0,0,0,0,0,0,0,0,0,0]
+        close = 0 //guessed the number but not locatoin
+        exact = 0 // guessed the number and location
+        colorPickNum = 0 // number to associate with the hint colorpick
+        currentNumber = 0 //
+        numberSelected = 0
+        
+        totalTime = 90
+        secondsPassed = 0
+        
+        updateVerify()
+        updateUI()
+        self.tryAgainLabel.alpha = 0
+        self.bingoLabel.alpha = 0
+        
+        
+    }
+    
+    
+    
     
     
     
@@ -282,7 +331,7 @@ class ViewController: UIViewController {
             colorPickNum = 10
         case (1,3):
             colorPickNum = 11
-        case (1,2):
+        case (2,1):
             colorPickNum = 12
         case (1,2):
             colorPickNum = 13

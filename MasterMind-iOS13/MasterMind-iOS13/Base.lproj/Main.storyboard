@@ -344,7 +344,7 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSB-IF-rkA">
-                                <rect key="frame" x="304" y="788" width="80" height="36"/>
+                                <rect key="frame" x="304" y="729" width="80" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -353,6 +353,15 @@
                                     <action selector="checkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VK9-NX-hoF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Try Again" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nin-Gk-2Nl" userLabel="Lost">
+                                <rect key="frame" x="52" y="344" width="310" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.60784313729999995" green="0.10980392160000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="11" height="20"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-cY-kum" userLabel="VerifyView">
                                 <rect key="frame" x="294" y="24" width="100" height="713"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -412,21 +421,33 @@
                                 <color key="shadowColor" red="0.60784313729999995" green="0.10980392160000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="shadowOffset" width="11" height="20"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Try Again" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nin-Gk-2Nl" userLabel="Lost">
-                                <rect key="frame" x="52" y="344" width="310" height="208"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Mm-2C-InD">
+                                <rect key="frame" x="284" y="776" width="120" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.60784313729999995" green="0.10980392160000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="shadowOffset" width="11" height="20"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-VO-XDK">
+                                        <rect key="frame" x="20" y="20" width="80" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ha-wP-tDA"/>
+                                            <action selector="restartClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psu-ei-CYL"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startover" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-C3-hso">
+                                        <rect key="frame" x="20" y="20" width="80" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bingoLabel" destination="zNl-JB-4fe" id="LgR-kn-oAj"/>
+                        <outlet property="checkButtonView" destination="nSB-IF-rkA" id="KBl-Dx-m5f"/>
                         <outlet property="numberView0" destination="lf8-a3-5pp" id="Uxf-B6-okE"/>
                         <outlet property="numberView1" destination="7uW-eg-R6e" id="Frv-gh-9mR"/>
                         <outlet property="numberView2" destination="TrK-jR-bRf" id="R2u-04-Pir"/>
@@ -436,6 +457,7 @@
                         <outlet property="numberView6" destination="bbN-gI-ZUy" id="BMF-FT-cXX"/>
                         <outlet property="numberView7" destination="y5Y-O3-ihc" id="u4K-D6-ym6"/>
                         <outlet property="progressVIewBar" destination="xVI-Ij-1xg" id="Bk6-eo-MW5"/>
+                        <outlet property="restartButtonView" destination="eR0-VO-XDK" id="82y-ms-X6I"/>
                         <outlet property="resultView0row0" destination="y9g-MO-R7g" id="Ciq-ef-BeK"/>
                         <outlet property="resultView0row1" destination="QEC-o8-ZSX" id="B0a-AS-Ztf"/>
                         <outlet property="resultView0row2" destination="GJ3-dO-7re" id="CCh-NQ-Mfl"/>
@@ -497,5 +519,6 @@
     <resources>
         <image name="Verify" width="1024" height="1024"/>
         <image name="Zero" width="1024" height="1024"/>
+        <image name="startover" width="512" height="512"/>
     </resources>
 </document>
