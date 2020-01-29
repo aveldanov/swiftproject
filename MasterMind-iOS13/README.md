@@ -48,7 +48,7 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 1.    Familiarized with the task and options of implementation. 
 2.    Created initial app flow using draw.ai
-3.    Build a basic functionality in Xcode command line interface with a static input (pattern, array) - https://github.com/aveldanov/swiftproject/tree/master/MasterMindPractice
+3.    Build a basic functionality in Xcode command line interface with a static input (pattern, array) - (https://github.com/aveldanov/swiftproject/tree/master/MasterMindPractice)
 4.    Wireframed a basic UI design
 5.    Created buttons, visuals using Canva and Appicon tools
 6.    Build the UI interface using Xcode
