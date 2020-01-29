@@ -9,15 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //MARK: - Creating outlets for all elemenets
+    //MARK: - Creating outlets for the elemenets
     
     @IBOutlet weak var bingoLabel: UILabel!
-    
     @IBOutlet weak var tryAgainLabel: UILabel!
     @IBOutlet weak var progressVIewBar: UIProgressView!
-    
     @IBOutlet weak var checkButtonView: UIButton!
-    
     @IBOutlet weak var restartButtonView: UIButton!
     
     @IBOutlet weak var numberView0: UIImageView!
@@ -85,13 +82,13 @@ class ViewController: UIViewController {
     
     //MARK: - set inital arguments
     
-    var counter = 0 //count clicks
-    var row = 0 //count rows
+    var counter = 0 //count click within a row
+    var row = 0 //count row number
     let targetArr = [1,2,3,5] // used for testing when could not figure async API reading
-    var pattern:[Int] = []  // Computer generated pattern
+    var pattern:[Int] = []  // Computer generated pattern init
     
     
-    //MARK: - using arrays as data storage
+    //MARK: - using arrays as data storage and initial placeholder for numbers
     
     var arrayNum = [
         [8,8,8,8],
@@ -108,11 +105,10 @@ class ViewController: UIViewController {
     ]
     var arrayVerNum = [0,0,0,0,0,0,0,0,0,0]
     
-    
     var close = 0 //guessed the number but not locatoin
     var exact = 0 // guessed the number and location
     var colorPickNum = 0 // number to associate with the hint colorpick
-    var currentNumber = 0 //
+    var currentNumber = 0
     var numberSelected = 0
     
     let length = 4 // length of the row
@@ -129,13 +125,6 @@ class ViewController: UIViewController {
     //MARK: - numbers assiciated with user input to build an array
     
     let numbersOptions = ["ZERO":0,"ONE":1,"TWO":2,"THREE":3,"FOUR":4,"FIVE":5,"SIX":6,"SEVEN":7]
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -247,23 +236,17 @@ class ViewController: UIViewController {
         exact = 0 // guessed the number and location
         colorPickNum = 0 // number to associate with the hint colorpick
         currentNumber = 0 //
-        numberSelected = 0
-        guesses = 9
-        totalTime = 90
-        secondsPassed = 0
-        updateVerify()
-        updateUI()
-        tryAgainLabel.alpha = 0
-        tryAgainLabel.text = ""
-        bingoLabel.alpha = 0
-        
+        numberSelected = 0 //Selected number
+        guesses = 9 // Number of guesses - 1
+        totalTime = 90 // Time alloted in seconds
+        secondsPassed = 0 // Seconds passed for the timer func
+        updateVerify() // Update UI
+        updateUI() // Update UI
+        tryAgainLabel.alpha = 0  // Transparency settings for the labels
+        tryAgainLabel.text = "" // Initial input for the labels
+        bingoLabel.alpha = 0 // Transparency settings
         
     }
-    
-    
-    
-    
-    
     
     
     
@@ -304,13 +287,12 @@ class ViewController: UIViewController {
     }
     
     
-    
     func getTypedInput()->[Int]{
-        print("YOY",arrayNum[row])
+        print("Testing arrayNum[row]",arrayNum[row])
         return arrayNum[row]
     }
     
-    //MARK: - Verifying various combination of possible answers to be used for color-hint references
+    //MARK: - Verifying various combination of possible answers to be used for the color-hint references
     func verifyColor(close:Int, exact:Int)->Int{
         switch (close, exact) {
         case (0,0):
@@ -351,7 +333,7 @@ class ViewController: UIViewController {
     
     
     
-    //MARK: - Upding numbers in rows (i could't be any more inefficient)
+    //MARK: - Updating numbers in rows (I could't be any more inefficient :/ )
     
     func updateUI(){
         resultView0row0.image = numberImages[arrayNum[0][0]]
@@ -416,9 +398,7 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    //MARK: - Asyng function to GET API data
+    //MARK: - Async function to GET API data and convert it into an array
     
     func getRandomArray(for array:[Int]) {
         
@@ -492,7 +472,7 @@ class ViewController: UIViewController {
         print(error)
     }
     
-    //MARK: - The heart of the app -  all logic is inside the running()
+    //MARK: - The heart of the app -  all logic is inside the running() with API generated pattern = input and user numbers = array
     func running(input:[Int], array:[Int]){
         let pattern = input
         
@@ -503,7 +483,7 @@ class ViewController: UIViewController {
             close = 0
             
             
-            //MARK: - Used this initially as a command line input
+            //MARK: - Used this initially as a command line input for testing
             
             // READ ARRAY AS INT
             //            let arrayNew = readLine()?
@@ -525,7 +505,7 @@ class ViewController: UIViewController {
             //print(arrayDict)
             
             
-            //MARK: - COMPARE and get CLOSE
+            //MARK: - COMPARE two dict and get number of CLOSE(guessed number but not the position) items
             print("patternDic", patternDict)
             print("arrayDic", arrayDict)
             for item in patternDict.keys{
@@ -544,7 +524,7 @@ class ViewController: UIViewController {
             
             //        print("CLOSE: \(close)")
             
-            //MARK: - combined arrays of pattern and array in pairs e.g (1,1) and check for matches
+            //MARK: - combined arrays of pattern and array in pairs e.g (1,1) and check for matches to identify Exact match (number and position)
             let zippped = Array(zip(pattern,array))
             
             print("Zipped \(zippped)")
@@ -580,8 +560,10 @@ class ViewController: UIViewController {
                 print("Continue, guesses rem: \(guesses)")
             }
             
+            //MARK: - reducing the number of guesses left
             guesses = guesses - 1
             
+            //MARK: - moving input to the next row
             row = row + 1
             
         }else{
