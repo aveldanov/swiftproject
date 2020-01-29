@@ -41,9 +41,6 @@ func performRequest(urlString:String){
                 return
             }
             if let safeData = data{
-                
-                
-                
                 let dataString = String(data: safeData, encoding: .utf8)
                 //                newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
                 
@@ -69,7 +66,7 @@ func getData(randomData: Data) -> [Int]{
     
     newArr = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
     
-        print("Inside get data:", newArr)
+//        print("Inside get data:", newArr)
     
     return newArr
 }
@@ -80,7 +77,7 @@ func useData(input:[Int]){
     var countt = 3
     let  newestArr = input
     
-        print("inside useData",newestArr)
+//        print("inside useData",newestArr)
     
     
 }
