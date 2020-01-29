@@ -53,15 +53,20 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 5.    Created buttons, visuals using Canva and Appicon tools
 6.    Build the UI interface using Xcode
 7.    Moved functionality into the UI view
-8.    Tested functionality
+8.    Added a 90 second timer to complete the game
+9.    Added a reset functionality to reset the game when you win, lose or time is over
+10.    Tested functionality
+
 
 
 ### Next Steps
 
 -    Refactoring the code
+-    Deeper debugging
 -    Optional: link to database to manipulate state
 -    Building automation tests
 -    Deploying in prod
+
 
 
 ### How to play
