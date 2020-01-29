@@ -131,6 +131,14 @@ class ViewController: UIViewController {
     let numbersOptions = ["ZERO":0,"ONE":1,"TWO":2,"THREE":3,"FOUR":4,"FIVE":5,"SIX":6,"SEVEN":7]
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -217,9 +225,6 @@ class ViewController: UIViewController {
     //MARK: - API Url  - random.org to generate random array
     let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
     
-    
-    
-    
     @IBAction func restartClicked(_ sender: UIButton) {
         
         counter = 0
@@ -243,17 +248,19 @@ class ViewController: UIViewController {
         colorPickNum = 0 // number to associate with the hint colorpick
         currentNumber = 0 //
         numberSelected = 0
-        
+        guesses = 9
         totalTime = 90
         secondsPassed = 0
-        
         updateVerify()
         updateUI()
-        self.tryAgainLabel.alpha = 0
-        self.bingoLabel.alpha = 0
+        tryAgainLabel.alpha = 0
+        tryAgainLabel.text = ""
+        bingoLabel.alpha = 0
         
         
     }
+    
+    
     
     
     
@@ -277,7 +284,6 @@ class ViewController: UIViewController {
         updateUI()
         //MARK: - moving to the next number
         counter = counter + 1
-        
         
         
         

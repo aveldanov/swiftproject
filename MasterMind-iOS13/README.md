@@ -21,10 +21,11 @@ A player must guess the right number combinations within 10 attempts to win the 
 
 ### What was created
 
-
 Created an interactive Mastermind game app with enabled random number generator API from random.org. The app has a graphic UI interface that allows to select numbers by clicking respective buttons. 
  
+ 
 ### Technologies/technique used
+
 -    Random.org API to generate random numbers
 -    Use of graphic tools to great visuals - Canva and Appicon
 -    Arrays and Dictionary manipulation
@@ -56,21 +57,17 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 
 ### Next Steps
+
 -    Refactoring the code
 -    Optional: link to database to manipulate state
 -    Building automation tests
 -    Deploying in prod
 
 
- 
- 
-
-
 ### How to play
 
 The pattern combination of 4 numbers is automatically generated. Play should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then click the Check get feedback from the game whether the number is guessed correctly. There two types of hits.
 Orange dots show the number of digits guess but the position is not correct. The green dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
-
 
 
 
