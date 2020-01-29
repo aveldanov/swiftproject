@@ -38,7 +38,7 @@ Created an interactive Mastermind game app with enabled random number generator 
 
 ### How to clone and run the app
 
-Head over to the URL below and use it to clone the starting project in Xcode.
+Head over to the URL ( https://github.com/aveldanov/swiftproject/tree/master/MasterMind-iOS13 ) and use it to clone the starting project in Xcode.
 Once the link is clicked it will open a page of the public github repository that hosts the project files.
 Then in the right side of the page click the green ‘click or download’ button. In the drop down menu copy the link by pressing ‘copy’ button. NOTE: The link refers to the actual project and its differ from the github page link of the project. 
 Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the welcome screen with the ‘clone an existing project’ option. Otherwise you can go to source control menu then clone option. Both options gets you to the same screen to paste the URL you copied over from github. As soon as pasted, proceed to cloning and save the project on your computer. Once its done cloning you should see the project opened. 
