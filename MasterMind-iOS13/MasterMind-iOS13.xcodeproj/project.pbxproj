@@ -20,6 +20,7 @@
 		214B81EA23DA405100B28C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B81E823DA405100B28C23 /* Main.storyboard */; };
 		214B81EC23DA405300B28C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214B81EB23DA405300B28C23 /* Assets.xcassets */; };
 		214B81EF23DA405300B28C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B81ED23DA405300B28C23 /* LaunchScreen.storyboard */; };
+		21C586A223E0F67A00FEB177 /* archive4 in Resources */ = {isa = PBXBuildFile; fileRef = 21C586A123E0F67A00FEB177 /* archive4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		214B81EB23DA405300B28C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214B81EE23DA405300B28C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		214B81F023DA405300B28C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C586A123E0F67A00FEB177 /* archive4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 				214B81E423DA405100B28C23 /* SceneDelegate.swift */,
 				214B81E623DA405100B28C23 /* ViewController.swift */,
 				2103A55F23DA71E1006781D0 /* Combination.swift */,
-				210E633823DD76C500DA6E1B /* archive3 */,
 				2103A56123DAA65F006781D0 /* Rows.swift */,
 				214B81E823DA405100B28C23 /* Main.storyboard */,
 				214B81EB23DA405300B28C23 /* Assets.xcassets */,
@@ -85,6 +86,8 @@
 				21130A1023DD1551002DC109 /* archive */,
 				210E633323DD56DA00DA6E1B /* archive1 */,
 				210E633523DD656200DA6E1B /* archive2 */,
+				210E633823DD76C500DA6E1B /* archive3 */,
+				21C586A123E0F67A00FEB177 /* archive4 */,
 			);
 			path = "MasterMind-iOS13";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				210E633423DD56DA00DA6E1B /* archive1 in Resources */,
 				210E633623DD656200DA6E1B /* archive2 in Resources */,
 				21130A1123DD1551002DC109 /* archive in Resources */,
+				21C586A223E0F67A00FEB177 /* archive4 in Resources */,
 				214B81EF23DA405300B28C23 /* LaunchScreen.storyboard in Resources */,
 				210E633923DD76C500DA6E1B /* archive3 in Resources */,
 				214B81EC23DA405300B28C23 /* Assets.xcassets in Resources */,

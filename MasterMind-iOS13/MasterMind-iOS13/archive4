@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tryAgainLabel: UILabel!
     
-    @IBOutlet weak var progressVIewBar: UIProgressView!
     
     @IBOutlet weak var numberView0: UIImageView!
     @IBOutlet weak var numberView1: UIImageView!
@@ -116,8 +115,6 @@ class ViewController: UIViewController {
     var guesses = 9 //number of guesses minus 1
     var array = [6,6,6,6] // used for testing of user input
     
-    var totalTime = 60
-    var secondsPassed = 0
     
     //MARK: - images literal
     let numberImages = [#imageLiteral(resourceName: "Zero"),#imageLiteral(resourceName: "One"),#imageLiteral(resourceName: "Two"),#imageLiteral(resourceName: "Three"),#imageLiteral(resourceName: "Four"),#imageLiteral(resourceName: "Five"),#imageLiteral(resourceName: "Six"),#imageLiteral(resourceName: "Seven"),#imageLiteral(resourceName: "noneElement")]
@@ -184,27 +181,8 @@ class ViewController: UIViewController {
         numberView6.image = #imageLiteral(resourceName: "input6")
         numberView7.image = #imageLiteral(resourceName: "input7")
         
-      
-       Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameOver), userInfo: nil, repeats: true)
-
-//        progressVIewBar.progress = 1.0
-        
-        
         
     }
-    
-    @objc func gameOver()
-          {
-            if secondsPassed < totalTime{
-                print("\(secondsPassed) seconds")
-                secondsPassed += 1
-            }else{
-                tryAgainLabel.text = "Out of time"
-                tryAgainLabel.alpha = 1
-            }
-          }
-    
-    
     
     //MARK: - API Url  - random.org to generate random array
     let baseURL = "https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new"
@@ -590,3 +568,4 @@ class ViewController: UIViewController {
 
 
 // Anton Veldanov 2020 All Rights Reserved
+

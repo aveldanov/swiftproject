@@ -335,6 +335,12 @@
                                             <action selector="buttonNumberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b49-f5-1y0"/>
                                         </connections>
                                     </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xVI-Ij-1xg">
+                                        <rect key="frame" x="20" y="162.5" width="264" height="1.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="progressTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSB-IF-rkA">
@@ -429,6 +435,7 @@
                         <outlet property="numberView5" destination="4Po-Fh-n1X" id="dM8-0D-6AE"/>
                         <outlet property="numberView6" destination="bbN-gI-ZUy" id="BMF-FT-cXX"/>
                         <outlet property="numberView7" destination="y5Y-O3-ihc" id="u4K-D6-ym6"/>
+                        <outlet property="progressVIewBar" destination="xVI-Ij-1xg" id="Bk6-eo-MW5"/>
                         <outlet property="resultView0row0" destination="y9g-MO-R7g" id="Ciq-ef-BeK"/>
                         <outlet property="resultView0row1" destination="QEC-o8-ZSX" id="B0a-AS-Ztf"/>
                         <outlet property="resultView0row2" destination="GJ3-dO-7re" id="CCh-NQ-Mfl"/>
