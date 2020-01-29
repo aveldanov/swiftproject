@@ -78,7 +78,7 @@ Orange dots show the number of digits guess but the position is not correct. The
 
 
 
-### App Flowchart Diagram
+### Mastermind Flowchart Diagram
 
 ![](DOCUMENTATION/MasterMindFlow.jpg)
 
