@@ -20,6 +20,7 @@
 		214B81EA23DA405100B28C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B81E823DA405100B28C23 /* Main.storyboard */; };
 		214B81EC23DA405300B28C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214B81EB23DA405300B28C23 /* Assets.xcassets */; };
 		214B81EF23DA405300B28C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B81ED23DA405300B28C23 /* LaunchScreen.storyboard */; };
+		21616E3E23EE1B47007F826D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21616E3D23EE1B47007F826D /* Player.swift */; };
 		21C586A223E0F67A00FEB177 /* archive4 in Resources */ = {isa = PBXBuildFile; fileRef = 21C586A123E0F67A00FEB177 /* archive4 */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		214B81EB23DA405300B28C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214B81EE23DA405300B28C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		214B81F023DA405300B28C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21616E3D23EE1B47007F826D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		21C586A123E0F67A00FEB177 /* archive4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = archive4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				214B81E223DA405100B28C23 /* AppDelegate.swift */,
 				214B81E423DA405100B28C23 /* SceneDelegate.swift */,
 				214B81E623DA405100B28C23 /* ViewController.swift */,
+				21616E3D23EE1B47007F826D /* Player.swift */,
 				2103A55F23DA71E1006781D0 /* Combination.swift */,
 				2103A56123DAA65F006781D0 /* Rows.swift */,
 				214B81E823DA405100B28C23 /* Main.storyboard */,
@@ -180,6 +183,7 @@
 				214B81E323DA405100B28C23 /* AppDelegate.swift in Sources */,
 				214B81E523DA405100B28C23 /* SceneDelegate.swift in Sources */,
 				2103A56223DAA65F006781D0 /* Rows.swift in Sources */,
+				21616E3E23EE1B47007F826D /* Player.swift in Sources */,
 				2103A56023DA71E1006781D0 /* Combination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

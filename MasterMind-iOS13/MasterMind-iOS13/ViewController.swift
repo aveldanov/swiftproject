@@ -126,6 +126,11 @@ class ViewController: UIViewController {
     
     let numbersOptions = ["ZERO":0,"ONE":1,"TWO":2,"THREE":3,"FOUR":4,"FIVE":5,"SIX":6,"SEVEN":7]
     
+ 
+    var arrayPlayer = [Player]()
+    
+    var currentPlayer: Player?   // fist player assigned by default
+
     
     
     override func viewDidLoad() {
@@ -193,7 +198,24 @@ class ViewController: UIViewController {
         
         checkButtonView.layer.cornerRadius = 25.0
         restartButtonView.layer.cornerRadius = 25.0
+        
+        
+        let player1 = Player(score: 0, name: "Anton")
+        let player2 = Player(score: 0, name: "John")
+        
+        arrayPlayer = [player1,player2]
+        
+        currentPlayer = arrayPlayer[0]
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
     
     @objc func gameOver()
     {
@@ -246,6 +268,8 @@ class ViewController: UIViewController {
         tryAgainLabel.text = "" // Initial input for the labels
         bingoLabel.alpha = 0 // Transparency settings
         
+        
+        
     }
     
     
@@ -256,10 +280,11 @@ class ViewController: UIViewController {
         //MARK: - reading current sender to assign the clicked number
         
         let selection = sender.currentTitle!
+        // Matching selections titles to numvers
         numberSelected = numbersOptions[selection]!
         
         //        print(numberSelected)
-        
+        // Assgign selected number to current row/counter position
         arrayNum[row][counter] = numberSelected
         //                        print(arrayNum[row])
         
@@ -280,7 +305,7 @@ class ViewController: UIViewController {
         //MARK: - assigning current row to the array to be used as input for the calculations
         array = arrayNum[row]
         
-        //MARK: - invoking the function that contaings API data
+        //MARK: - invoking the function that contaings API data and passining user input too
         getRandomArray(for: array)
         //MARK: - resetting counter to 0 to start assigning clicked digits from the left of each row
         counter = 0
@@ -413,8 +438,12 @@ class ViewController: UIViewController {
             
             //MARK: - Create a new data task for the URLSession
             let task = session.dataTask(with: url) { (data, response, error) in
+                // error handling
                 if error != nil {
-                    self.didFailWithError(error: error!)
+                    
+                    let veryNewPatter = self.getARandomArrayLocally()
+                    self.didUpdateRandomArray(patternInput: veryNewPatter, array: array)
+                    //                    self.didFailWithError(error: error!)
                     return
                 }
                 
@@ -425,6 +454,7 @@ class ViewController: UIViewController {
                     let newPattern = Array(dataString!).filter({$0 != "\n"}).compactMap({$0.wholeNumberValue})
                     print(newPattern)
                     //MARK: - pass along the necessary data.
+                    
                     self.didUpdateRandomArray(patternInput: newPattern, array: array)
                 }
             }
@@ -446,9 +476,8 @@ class ViewController: UIViewController {
         }
         
         
-        
-        
         print("GUESS",guesses)
+        // Invoking the main function:
         running(input: pattern, array: array)
         
         //        for attempt in 0...(guesses){
@@ -467,6 +496,25 @@ class ViewController: UIViewController {
     }
     
     
+    func getARandomArrayLocally(numberItems:Int = 4)->[Int]{
+        
+        var arrayInput = [Int]()
+        
+        
+        for _ in 0..<numberItems{
+            arrayInput.append(Int.random(in: 0...7))
+        }
+        
+        return arrayInput
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: - API output errors verification
     func didFailWithError(error: Error) {
         print(error)
@@ -476,7 +524,7 @@ class ViewController: UIViewController {
     func running(input:[Int], array:[Int]){
         let pattern = input
         
-        print("array", array, "pattern", pattern)
+        //        print("array", array, "pattern", pattern)
         
         if guesses > 0{
             exact = 0
@@ -494,8 +542,8 @@ class ViewController: UIViewController {
             //            array = arrayNew!
             
             
-            let mappedPattern = pattern.map{($0,1)}
-            let patternDict = Dictionary(mappedPattern, uniquingKeysWith: +)
+            let mappedPattern = pattern.map{($0,1)} //((1:1),(2:1),(3:1),(4:1))
+            let patternDict = Dictionary(mappedPattern, uniquingKeysWith: +) // [3:1, 4:3]
             
             
             let mappedArray = array.map{($0,1)}
@@ -537,10 +585,11 @@ class ViewController: UIViewController {
                 //                    print("PRINTING: \(val1) has \(val2)")
             }
             
-            //MARK: - updating UI paramenters to update UI
+            //MARK: - updating UI paramenters to update UI. Pick option using verifyColor func
             colorPickNum = verifyColor(close: close, exact: exact)
+            //MARK: - Update array of ver numbers
             arrayVerNum[row] = colorPickNum
-            print(arrayVerNum)
+            //            print("ARRAY VER NUM:",arrayVerNum)
             
             DispatchQueue.main.async{
                 self.updateVerify()
@@ -549,11 +598,37 @@ class ViewController: UIViewController {
             print("")
             print("EXACT: \(exact)  CLOSE: \(close)")
             
+            
+        
+            
+            
+            
             if exact==length{
                 
+                
+                
+                
                 DispatchQueue.main.async{
+                    
+                    if let currentPlayer = self.currentPlayer{
+                        if currentPlayer == self.arrayPlayer[0]{
+                                          self.currentPlayer = self.arrayPlayer[1]
+                                          
+                                      }else{
+                                          self.currentPlayer = self.arrayPlayer[0]
+                                      }
+                                      
+                    }
+                    
+                    
+                    
+                    
                     self.bingoLabel.alpha = 0.8
+                    
+                    print("CurrentPlayer:  \(self.currentPlayer?.name)")
+                    
                     print("You got it right!")
+                    
                     
                 }
             }else{
@@ -570,6 +645,18 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async{
                 self.tryAgainLabel.alpha = 0.8
+                
+                          if let currentPlayer = self.currentPlayer{
+                if currentPlayer == self.arrayPlayer[0]{
+                                  self.currentPlayer = self.arrayPlayer[1]
+                                  
+                              }else{
+                                  self.currentPlayer = self.arrayPlayer[0]
+                              }
+                              
+            }
+                
+                print("CurrentPlayer: ", self.currentPlayer?.name)
             }
             
             print("DONE")
